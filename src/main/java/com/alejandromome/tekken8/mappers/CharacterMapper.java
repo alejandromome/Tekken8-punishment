@@ -1,6 +1,7 @@
 package com.alejandromome.tekken8.mappers;
 
 import com.alejandromome.tekken8.dtos.CharacterDTO;
+import com.alejandromome.tekken8.domain.entities.Character;
 
 public interface CharacterMapper {
     CharacterDTO  toDTO(Character character);

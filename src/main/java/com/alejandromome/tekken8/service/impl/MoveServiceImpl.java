@@ -18,6 +18,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -51,6 +52,8 @@ public class MoveServiceImpl implements MoveService {
     public Optional<Move> findById(Long id) {
         return moveRepository.findById(id);
     }
+
+
 
     @Override
     public Integer importMoves(InputStream inputStream, String characterName) throws IOException {
@@ -92,6 +95,18 @@ public class MoveServiceImpl implements MoveService {
         }
         return rows++;
     }
+
+    @Override
+    public List<Move> findAllMoves() {
+        return moveRepository.findAll();
+    }
+
+    @Override
+    public List<Move> findAllMovesByCharacterId(Long id) {
+        return moveRepository.findByCharacterId(id);
+    }
+
+
 
 
     private Integer parseStartup(String cleanStartup){

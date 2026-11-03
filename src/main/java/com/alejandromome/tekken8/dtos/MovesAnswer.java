@@ -14,8 +14,9 @@ public class MovesAnswer {
     private String name;
     private String command;
     private String hitLevel;
-    private Long damage;
-    private Long startFrame;
-    private Long blockFrame;
+    private String damage;
+    private String startFrame;
+    private String blockFrame;
     private String notes;
+
 }

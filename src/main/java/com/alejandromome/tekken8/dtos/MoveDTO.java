@@ -11,4 +11,5 @@ import lombok.NoArgsConstructor;
 @Builder
 public class MoveDTO {
     private Long id;
+    private String command;
 }
