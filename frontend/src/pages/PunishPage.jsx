@@ -1,5 +1,30 @@
-import {CHARACTERS} from "../assets/characters.js";
-function PunishPage({opponentCharacter, setMainCharacter, mainCharacter, punishes, setPage}){
+import {useEffect} from "react";
+
+function PunishPage({opponentCharacter, setMainCharacter, mainCharacter, punishes, setPage, characters, moveSearch, opponentMoves, setPunishes}){
+    useEffect(()=>{
+        console.log("Estado actual de moveSearch:", moveSearch.id);
+        if(mainCharacter.name !== "none" && moveSearch.id !== null) {
+
+            const matchedMove = opponentMoves.find(move => move.command === moveSearch)
+
+            console.log("Estado actual de matchedMove:", matchedMove);
+            fetch(`/api/v1/punishments?characterId=${mainCharacter.id}&moveId=${matchedMove.id}`).then(response => response.json())
+                .then(moves => {
+                    const formatPunishes = moves.map(move => ({
+                        id: move.id,
+                        command: move.command,
+                        startUp: move.startFrame,
+                        damage: move.damage
+                    }));
+                    setPunishes(formatPunishes);
+                    console.log("Estado actual de punished:", formatPunishes);
+                })
+
+        }
+    }, [mainCharacter, moveSearch]);
+
+
+
     return(
         <>
             <header id="title">
@@ -16,7 +41,7 @@ function PunishPage({opponentCharacter, setMainCharacter, mainCharacter, punishe
                 <div id = "choose-character">
                     {mainCharacter.name === "none" ?(
                         <div>
-                            {CHARACTERS.map(character => (
+                            {characters.map(character => (
                                 <button key={character.id} onClick={()=> setMainCharacter(character)}>
                                 <img src={character.icon} alt={character.name}/>
                                     <span>{character.name}</span>
@@ -49,8 +74,8 @@ function PunishPage({opponentCharacter, setMainCharacter, mainCharacter, punishe
                     </thead>
                     <tbody>
                     {punishes.map((punish) => (
-                        <tr>
-                            <td> {punish.move}</td>
+                        <tr key={punish.id}>
+                            <td> {punish.command}</td>
                             <td> {punish.startUp}</td>
                             <td> {punish.damage}</td>
                         </tr>

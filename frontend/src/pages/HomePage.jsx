@@ -1,6 +1,6 @@
-import {CHARACTERS} from "../assets/characters.js";
 
-function HomePage({ opponentCharacter, setOpponentCharacter, setPage, setMoveSearch, moveSearch }) {
+
+function HomePage({ opponentCharacter, setOpponentCharacter, setPage, setMoveSearch, moveSearch, characters }) {
     return(
         <>
             <header id="title">
@@ -18,7 +18,7 @@ function HomePage({ opponentCharacter, setOpponentCharacter, setPage, setMoveSea
                     <button id = "bt-punishment" onClick={()=>setPage("PunishPage")}> PUNISH HIM</button>
                 </div>
                 <div id = "choose-character">
-                    {CHARACTERS.map(character => (
+                    {characters.map(character => (
                         <button key={character.id} onClick={()=> setOpponentCharacter(character)}>
                             <img src = {character.icon} alt={character.name}/>
                         </button>
