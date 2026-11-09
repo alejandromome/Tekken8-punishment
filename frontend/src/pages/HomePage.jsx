@@ -10,12 +10,22 @@ function HomePage({ opponentCharacter, setOpponentCharacter, setPage, setMoveSea
             </header>
             <section id = "middle-block">
                 <div id = "selected-character">
-                    <img src={opponentCharacter.portrait} alt="Foto del personaje"/>
-                    <h2>{opponentCharacter.name}</h2>
-                    <h3>{opponentCharacter.style}</h3>
+
+                    {opponentCharacter.name !== "none" ? ( <>
+                        <img id={"picture"} src={opponentCharacter.portrait} alt="Picture"/>
+                        <h2>{opponentCharacter.name}</h2>
+                        <h3>{opponentCharacter.style}</h3>
+                <div id = "punishment-cage">
+
                     <input type= "text"
-                           placeholder={"..."} onChange={(e)=>setMoveSearch(e.target.value)} value={moveSearch}/>
-                    <button id = "bt-punishment" onClick={()=>setPage("PunishPage")}> PUNISH HIM</button>
+                           placeholder={"ENTER COMMAND (e.g. df2, 1,1,2)..."}
+                           onChange={(e)=>setMoveSearch(e.target.value)} value={moveSearch}/>
+
+
+                </div> </>
+                    ) : (<div>CHOOSE THE CHARACTER YOU WANT TO PUNISH!</div>) }
+
+
                 </div>
                 <div id = "choose-character">
                     {characters.map(character => (
@@ -27,7 +37,7 @@ function HomePage({ opponentCharacter, setOpponentCharacter, setPage, setMoveSea
                 </div>
             </section>
             <footer id= "footer-hp">
-                Y AQUI ESTA EL FOOTER
+                <button id = "bt-punishment" onClick={()=>setPage("PunishPage")}> PUNISH HIM</button>
 
             </footer>
 
