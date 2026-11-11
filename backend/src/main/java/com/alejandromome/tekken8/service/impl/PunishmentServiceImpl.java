@@ -24,6 +24,8 @@ public class PunishmentServiceImpl implements PunishmentService {
 
     @Override
     public List<MovesAnswer> getBestMoves(Long characterId, Long moveId) {
+        System.out.println(characterId);
+        System.out.println(moveId);
         Move chosedMove = moveRepository.findById(moveId).orElseThrow(() -> new RuntimeException("Move not found"));
         List<Move> moves = characterRepository.findById(characterId).get().getMoves();
 

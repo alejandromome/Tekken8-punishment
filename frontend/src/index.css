@@ -94,6 +94,16 @@ header {
     text-align: center;
 }
 
+#choose-character{
+    flex:1;
+
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    justify-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
 #choose-character button:not(.bt-return) {
     background-color:transparent;
     border: none;
@@ -101,11 +111,12 @@ header {
 }
 
 #choose-character button img{
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
     display: flex;
     flex-direction: column;
+
 }
 
 #footer-hp{
@@ -241,10 +252,10 @@ input:active{
 
 #punishers-table{
     width: 100%;
-    max-width: 80vw;           /* Evita que se desparrame en pantallas anchas */
-    margin: 0 auto;             /* Centra la tabla dentro del contenedor con scroll */
-    table-layout: fixed;        /* Fuerza al navegador a respetar anchos exactos */
-    border-collapse: collapse;  /* Une los bordes para un acabado uniforme y sólido */
+    max-width: 80vw;
+    margin: 0 auto;
+    table-layout: fixed;
+    border-collapse: collapse;
     text-align: center;
 
 }
