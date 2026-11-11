@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class MovesAnswer {
+    private Long id;
     private String name;
     private String command;
     private String hitLevel;

@@ -30,7 +30,8 @@ public class MoveMapperImpl implements MoveMapper {
 
     @Override
     public MovesAnswer transformToAnswer(Move move) {
-        return MovesAnswer.builder().name(move.getName())
+        return MovesAnswer.builder().id(move.getId()).name(
+               move.getName())
                 .command(move.getCommand())
                 .hitLevel(move.getHitLevel())
                 .damage(move.getDamage())

@@ -27,8 +27,8 @@ public class MoveController {
     private final MoveMapper moveMapper;
 
     @GetMapping
-    public ResponseEntity <List<MoveDTO>> getAllMoves(@PathVariable Long characterId){
-        List<MoveDTO> moves = moveService.findAllMovesByCharacterId(characterId).stream().map(moveMapper::toDTO).toList();
+    public ResponseEntity <List<MovesAnswer>> getAllMoves(@PathVariable Long characterId){
+        List<MovesAnswer> moves = moveService.findAllMovesByCharacterId(characterId).stream().map(moveMapper::transformToAnswer).toList();
         return ResponseEntity.ok(moves);
     }
 

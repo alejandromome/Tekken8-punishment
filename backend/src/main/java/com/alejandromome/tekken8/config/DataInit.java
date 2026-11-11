@@ -25,10 +25,15 @@ public class DataInit implements CommandLineRunner {
         if (characterRepository.count()==0){
             List<Character> characters = List.of(Character.builder().name("Alisa").build(),
                     Character.builder().name("Asuka").build(),
+                    Character.builder().name("Bob").build(),
+                    Character.builder().name("Clive").build(),
+                    Character.builder().name("Anna").build(),
+                    Character.builder().name("Armor-king").build(),
                     Character.builder().name("Azucena").build(),
+                    Character.builder().name("Miary-zo").build(),
                     Character.builder().name("Bryan").build(),
                     Character.builder().name("Claudio").build(),
-                    Character.builder().name("Devil Jin").build(),
+                    Character.builder().name("Devil-jin").build(),
                     Character.builder().name("Dragunov").build(),
                     Character.builder().name("Eddy").build(),
                     Character.builder().name("Feng").build(),
@@ -56,6 +61,8 @@ public class DataInit implements CommandLineRunner {
                     Character.builder().name("Steve").build(),
                     Character.builder().name("Victor").build(),
                     Character.builder().name("Xiaoyu").build(),
+                    Character.builder().name("Fahkumram").build(),
+                    Character.builder().name("Kunimitsu").build(),
                     Character.builder().name("Yoshimitsu").build(),
                     Character.builder().name("Zafina").build());
             characterRepository.saveAll(characters);
