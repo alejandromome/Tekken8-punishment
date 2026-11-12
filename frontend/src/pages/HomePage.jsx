@@ -29,7 +29,10 @@ function HomePage({ opponentCharacter, setOpponentCharacter, setPage, setMoveSea
                 </div>
                 <div id = "choose-character">
                     {characters.map(character => (
-                        <button key={character.id} onClick={()=> setOpponentCharacter(character)}>
+                        <button key={character.id} onClick={() => {
+                            setOpponentCharacter(character);
+                            setMoveSearch("");
+                        }}>
                             <img src = {character.icon} alt={character.name}/>
                         </button>
                     ))}

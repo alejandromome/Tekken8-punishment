@@ -24,8 +24,6 @@ public class PunishmentServiceImpl implements PunishmentService {
 
     @Override
     public List<MovesAnswer> getBestMoves(Long characterId, Long moveId) {
-        System.out.println(characterId);
-        System.out.println(moveId);
         Move chosedMove = moveRepository.findById(moveId).orElseThrow(() -> new RuntimeException("Move not found"));
         List<Move> moves = characterRepository.findById(characterId).get().getMoves();
 
@@ -34,6 +32,9 @@ public class PunishmentServiceImpl implements PunishmentService {
 
     private List<MovesAnswer> movesAnswerlist(List<Move> moves, Move chosedMove) {
 
+        if(chosedMove == null ||chosedMove.getCleanBlockFrame() == null || chosedMove.getCleanBlockFrame() >= 0){
+            return new ArrayList<>();
+        }
         return moves.stream().filter(move -> move.getCleanStartUp() != null
                 && move.getCleanStartUp() <= Math.abs(chosedMove.getCleanBlockFrame())).map(moveMapper::transformToAnswer).toList();
     }

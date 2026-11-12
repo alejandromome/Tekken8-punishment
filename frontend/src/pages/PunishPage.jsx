@@ -1,6 +1,8 @@
 import {useEffect} from "react";
 
-function PunishPage({opponentCharacter, setMainCharacter, mainCharacter, punishes, setPage, characters, moveSearch, opponentMoves, setPunishes}){
+function PunishPage({opponentCharacter, setMainCharacter, mainCharacter, punishes, setPage, characters, moveSearch,
+                        opponentMoves, setPunishes, setOpponentCharacter,
+                        setMoveSearch}){
     useEffect(()=>{
         console.log("Estado actual de moveSearch:", moveSearch.id);
         if(mainCharacter.name !== "none" && moveSearch.id !== null) {
@@ -41,17 +43,30 @@ function PunishPage({opponentCharacter, setMainCharacter, mainCharacter, punishe
                 </div>
                 <div id = "choose-character">
                     {mainCharacter.name === "none" ?(
-                        <div>
+                        <>
                             {characters.map(character => (
-                                <button key={character.id} onClick={()=> setMainCharacter(character)}>
-                                <img src={character.icon} alt={character.name}/>
+                                <button
+                                    key={character.id}
+                                    onClick={() => setMainCharacter(character)}
+                                >
+                                    <img src={character.icon} alt={character.name}/>
                                     <span>{character.name}</span>
                                 </button>
                             ))}
-
-                        </div>) : (
+                        </>) : (
                         <div id = "second-character">
-                            <button className="bt-return" onClick={()=> {setMainCharacter({name: "none", style:"none"}); }}> Return to second character selection</button>
+                            <button
+                                className="bt-return"
+                                onClick={() => {
+                                    setOpponentCharacter({name: "none", style: "none"});
+                                    setMainCharacter({name: "none", style: "none"});
+                                    setMoveSearch("");
+                                    setPunishes([]);
+                                    setPage("HomePage");
+                                }}
+                            >
+                                Return to first character selection
+                            </button>
 
                             <img id={"picture"} src={mainCharacter.portrait} alt="Foto del personaje"/>
                             <h2>{mainCharacter.name}</h2>
