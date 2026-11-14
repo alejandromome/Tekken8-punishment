@@ -16,12 +16,21 @@ Users can:
 - Their own character (The character you want to use on the punishment)
 
 ## Screenshots
-![firstSelection.png](Example-Images/firstSelection.png)
-![secondSelection.png](Example-Images/secondSelection.png)
-![secondSelection.png](Example-Images/secondSelection.png)
+![Opponent selection](Example-Images/firstSelection.png)
+![Main character Selection](Example-Images/secondSelection.png)
+![Punishments](Example-Images/punishes.png)
 
 ## Getting started
-What do you need to do to run up my project? First, clone the repository
+What do you need to do to run up my project? 
+Depending on your IDE, the setup setups may vary.
+
+If you want to run it from your terminal, you will need, at least:
+- Git
+- Node.js
+- Docker desktop
+- Java (I used JDK 25)
+
+First, clone the repository
 
 - git clone https://github.com/alejandromome/Tekken8-punishment
 
