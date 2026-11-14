@@ -75,7 +75,7 @@ PostgreSQL, Docker.
 SpringBoot & Java.
 
 ### Frontend
-React, CSS, JavaScript & Vite.
+React, CSS, JavaScript, node.js & Vite.
 
 ### Testing
 Junit & Mockito.
