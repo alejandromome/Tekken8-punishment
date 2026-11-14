@@ -34,28 +34,6 @@ public class MoveServiceImpl implements MoveService {
     private static final Pattern BLOCK_PATTERN = Pattern.compile("[+-]?\\d+");
 
     @Override
-    public Move createMove(Move move) {
-        return moveRepository.save(move);
-    }
-
-    @Override
-    public Move updateMove(Move move) {
-        return moveRepository.save(move);
-    }
-
-    @Override
-    public void deleteMoveById(Long i) {
-        moveRepository.deleteById(i);
-    }
-
-    @Override
-    public Optional<Move> findById(Long id) {
-        return moveRepository.findById(id);
-    }
-
-
-
-    @Override
     public Integer importMoves(InputStream inputStream, String characterName) throws IOException {
         Character character = characterRepository.findByName(characterName).orElseThrow(() -> new EntityNotFoundException("Character not found with name: " + characterName));
         CSVFormat format = CSVFormat.DEFAULT.builder()
@@ -97,17 +75,9 @@ public class MoveServiceImpl implements MoveService {
     }
 
     @Override
-    public List<Move> findAllMoves() {
-        return moveRepository.findAll();
-    }
-
-    @Override
     public List<Move> findAllMovesByCharacterId(Long id) {
         return moveRepository.findByCharacterId(id);
     }
-
-
-
 
     private Integer parseStartup(String cleanStartup){
         if (cleanStartup == null || cleanStartup.isBlank()){

@@ -1,6 +1,5 @@
 package com.alejandromome.tekken8.controllers;
 
-import com.alejandromome.tekken8.dtos.CharacterDTO;
 import com.alejandromome.tekken8.dtos.MovesAnswer;
 import com.alejandromome.tekken8.mappers.CharacterMapper;
 import com.alejandromome.tekken8.service.CharacterService;
@@ -16,11 +15,7 @@ import java.util.List;
 @RequestMapping(path = "/api/v1/punishments")
 @RequiredArgsConstructor
 public class PunishmentController {
-    private final CharacterService characterService;
-    private final CharacterMapper characterMapper;
     private final PunishmentService punishmentService;
-    private final MoveMapper moveMapper;
-
     @GetMapping
     ResponseEntity <List<MovesAnswer>> getBestMoves(@RequestParam Long characterId, @RequestParam Long moveId)
     {

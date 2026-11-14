@@ -12,12 +12,7 @@ import java.util.Optional;
 
 
 public interface MoveService {
-    Move createMove(Move move);
-    Move updateMove(Move move);
-    void deleteMoveById(Long i);
-    Optional<Move>  findById(Long id);
     Integer importMoves(InputStream stream, String characterName) throws IOException;
-    List<Move> findAllMoves();
     List<Move> findAllMovesByCharacterId(Long id);
 
 }

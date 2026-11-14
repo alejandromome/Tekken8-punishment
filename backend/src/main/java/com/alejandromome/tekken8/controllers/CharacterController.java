@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.alejandromome.tekken8.mappers.CharacterMapper;
-import com.alejandromome.tekken8.domain.entities.Character;
 
 import java.util.List;
 

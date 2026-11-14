@@ -4,7 +4,6 @@ import com.alejandromome.tekken8.domain.entities.Character;
 import com.alejandromome.tekken8.repositories.CharacterRepository;
 import com.alejandromome.tekken8.service.MoveService;
 import org.springframework.core.io.Resource;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;

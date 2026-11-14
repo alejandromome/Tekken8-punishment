@@ -5,8 +5,5 @@ import java.util.List;
 
 public interface CharacterService {
     List<Character> listCharacters();
-    Character getCharacterById(Long id);
-    Character createCharacter(Character character);
-    Character updateCharacter(Character character);
-    void deleteCharacter(Long id);
+
 }

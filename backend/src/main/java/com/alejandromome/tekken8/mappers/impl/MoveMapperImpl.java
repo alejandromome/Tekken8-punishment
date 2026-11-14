@@ -16,18 +16,6 @@ public class MoveMapperImpl implements MoveMapper {
         return MoveDTO.builder().id(move.getId()).command(move.getCommand()).build();
     }
 
-    @Override //eliminate?
-    public MovesAnswer toAnswer(MovesAnswer movesAnswer) {
-        return MovesAnswer.builder().name(movesAnswer.getName())
-                .command(movesAnswer.getCommand())
-                .hitLevel(movesAnswer.getHitLevel())
-                .damage(movesAnswer.getDamage())
-                .startFrame(movesAnswer.getStartFrame())
-                .blockFrame(movesAnswer.getBlockFrame())
-                .notes(movesAnswer.getNotes())
-                .build();
-    }
-
     @Override
     public MovesAnswer transformToAnswer(Move move) {
         return MovesAnswer.builder().id(move.getId()).name(

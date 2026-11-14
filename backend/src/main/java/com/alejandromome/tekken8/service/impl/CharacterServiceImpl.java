@@ -12,28 +12,10 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class CharacterServiceImpl implements CharacterService {
-
     private final CharacterRepository characterRepository;
-
     @Override
     public List<Character> listCharacters() {
         return characterRepository.findAll();
-    }
-
-    @Override
-    public Character getCharacterById(Long id) {
-        return characterRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Character not found with id: " + id ));
-    }
-
-    @Override
-    public Character createCharacter(Character character) {return characterRepository.save(character);}
-    @Override
-    public Character updateCharacter(Character character) {return characterRepository.save(character);}
-
-    @Override
-    public void deleteCharacter(final Long id) {
-        characterRepository.deleteById(id);
     }
 
 }

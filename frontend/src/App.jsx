@@ -1,5 +1,3 @@
-
-import './App.css'
 import {useEffect, useId, useState} from "react";
 import HomePage from "./pages/HomePage.jsx";
 import PunishPage from "./pages/PunishPage.jsx";
@@ -12,7 +10,6 @@ function App() {
     const [characters, setCharacters] = useState([]);
     const [punishes, setPunishes] = useState([]);
     const [opponentMoves, setOpponentMoves] = useState([]);
-    const [moveAnswer, setMoveAnswer] = useState("");
     useEffect(() => {
         fetch('/api/v1/characters').then(response => response.json()).then(characters=> { const formatCharacters = characters.map(char =>({
             id: char.id,
@@ -29,11 +26,8 @@ function App() {
 
     useEffect(() => {
         if (opponentCharacter.id !== "") {
-            console.log(opponentCharacter.id);
-            fetch(`/api/v1/characters/${opponentCharacter.id}/moves`).then(response => response.json()).then(moves => {setOpponentMoves(moves), console.log(moves)})
+            fetch(`/api/v1/characters/${opponentCharacter.id}/moves`).then(response => response.json()).then(moves => {setOpponentMoves(moves)})
         }
-        console.log(opponentMoves);
-
 
     }, [opponentCharacter]);
 

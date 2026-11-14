@@ -10,12 +10,5 @@ import java.util.List;
 
 @Repository
 public interface MoveRepository extends JpaRepository<Move, Long> {
-
     List<Move> findByCharacterId(Long characterId);
-    List<Move> findByCharacter_idAndDamage(Long id, Long damage);
-    List<Move> findAllByDamage(Long damage);
-    List<Move> findAllByDamageGreaterThan(Long damage);
-    List<Move> findAllByDamageLessThan(Long damage);
-    List<Move> findAllByCharacter_idAndStartFrameLessThanEqualOrderByDamageDesc(Long id, Long startFrame);
-
 }
