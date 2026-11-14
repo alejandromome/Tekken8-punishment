@@ -12,7 +12,6 @@ public class CharacterMapperImpl implements CharacterMapper {
         return CharacterDTO.builder().id(character.getId()).name(character.getName()).build();
 
     }
-
     @Override
     public Character toEntity(CharacterDTO characterDTO) {
         return null;

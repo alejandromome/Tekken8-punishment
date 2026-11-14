@@ -6,6 +6,5 @@ import com.alejandromome.tekken8.dtos.MovesAnswer;
 
 public interface MoveMapper {
     MoveDTO toDTO(Move move);
-    MovesAnswer toAnswer(MovesAnswer movesAnswer);
     MovesAnswer transformToAnswer(Move move);
 }

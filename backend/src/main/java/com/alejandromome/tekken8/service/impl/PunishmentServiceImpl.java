@@ -5,7 +5,6 @@ import com.alejandromome.tekken8.dtos.MovesAnswer;
 import com.alejandromome.tekken8.mappers.MoveMapper;
 import com.alejandromome.tekken8.repositories.CharacterRepository;
 import com.alejandromome.tekken8.repositories.MoveRepository;
-import com.alejandromome.tekken8.service.MoveService;
 import com.alejandromome.tekken8.service.PunishmentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

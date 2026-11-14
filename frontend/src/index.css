@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap');
 
 :root {
@@ -33,6 +34,8 @@
 
 }
 
+/*GLOBAL STYLES*/
+
 body {
     background-color: var(--bg-main);
     margin: 0;
@@ -41,14 +44,16 @@ body {
     letter-spacing: 1.5px;
     font-size: var(--font-size-mb);
 
-
 }
+/*HEADER*/
 
 header {
     display: block;
     text-align: center;
     background-color: var(--color-primary);
 }
+
+/*MAIN LAYOUT*/
 
 #middle-block {
     display: flex;
@@ -68,7 +73,9 @@ header {
 
 }
 
-#picture{
+/*CHARACTER SELECTION*/
+
+#picture {
     max-height: 50vh;
 }
 
@@ -78,24 +85,14 @@ header {
     height: 100%;
 }
 
-#selected-character, #second-character{
+#selected-character, #second-character {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#guaranteed-punishers{
-    display: flex;
-    flex-direction: column;
-}
-
-#punishers-table{
-    width: 100%;
-    text-align: center;
-}
-
-#choose-character{
+#choose-character {
     flex:1;
     display:grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -110,7 +107,7 @@ header {
     cursor: pointer;
 }
 
-#choose-character button img{
+#choose-character button img {
     width: 120px;
     height: 120px;
     object-fit: cover;
@@ -118,18 +115,12 @@ header {
     flex-direction: column;
 }
 
-#footer-hp{
-    justify-content: center;
+#second-character img {
+    transform: scaleX(-1);
 }
 
-#punishment-cage{
-    display: flex;
-    width: 100%;
-    object-fit: contain;
-    gap: 1rem;
-}
 
-input{
+input {
     border: 5px solid var(--cyan);
     background-color: var(--cyan);
     flex: 1;
@@ -145,17 +136,19 @@ input{
     transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.05s ease;
 }
 
-input:hover{
+input:hover {
     background-color: var(--cyan);
     border-color: var(--cyan);
     box-shadow: var(--glow-cyan), 0 0 20px rgba(128, 248, 255, 0.65);
 }
 
-input:active{
+input:active {
     transform: scale(0.97);
 }
 
-.bt-return{
+/*BUTTONS*/
+
+.bt-return {
     font-size:2rem;
     color: var(--cyan);
     top: 0;
@@ -190,13 +183,12 @@ input:active{
     transform: scale(0.95);
 }
 
-#bt-punishment{
+#bt-punishment {
     box-sizing: border-box;
     width: 100%;
     max-width: 450px;
     height: 3.5rem;
     padding: 0 1.75rem;
-
 
     font-family: var(--font-display), monospace;
     font-size: 1rem;
@@ -223,7 +215,14 @@ input:active{
     transform: scale(0.97);
 }
 
-#footer-hp{
+
+/*FOOTER*/
+
+#footer-hp {
+    justify-content: center;
+}
+
+#footer-hp {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -232,11 +231,15 @@ input:active{
 
 }
 
-#second-character img {
-    transform: scaleX(-1);
+/*PUNISHMENT RESULTS*/
+
+#guaranteed-punishers {
+    display: flex;
+    flex-direction: column;
+    min-height: 12vh;
 }
 
-#guaranteed-punishers{
+#guaranteed-punishers {
     display: flex;
     flex-direction: column;
 
@@ -249,17 +252,21 @@ input:active{
     background-color: var(--bg-surface);
 }
 
-#punishers-table{
+#punishers-table {
+    width: 100%;
+    text-align: center;
+}
+
+#punishers-table {
     width: 100%;
     max-width: 80vw;
     margin: 0 auto;
     table-layout: fixed;
     border-collapse: collapse;
     text-align: center;
-
 }
 
-#punishers-table th{
+#punishers-table th {
     position:sticky;
     top: 0;
     background-color: var(--bg-surface);
@@ -267,15 +274,25 @@ input:active{
     padding: 1rem;
     border-bottom: 2px solid var(--border-active);
 
-
 }
-#punishers-table tbody{
+
+#punishers-table tbody {
     text-align: left;
 }
 
-#punishers-table td{
+#punishers-table td {
     border: 2px solid var(--border-active);
 }
+
+#safe-move{
+    display: flex;
+    flex:1;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/*SCROLLBAR*/
 
 #guaranteed-punishers::-webkit-scrollbar {
     width: 6px;
